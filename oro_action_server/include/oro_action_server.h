@@ -160,22 +160,22 @@ namespace actionlib {
        */
    //   void publishStatus(const ros::TimerEvent& e);
 
+      void goalPortCB();
+      void cancelPortCB();
+
       /**
        * @brief  Explicitly publish status
        */
       void publishStatus();
 
- //     ros::NodeHandle node_;
-	RTT::TaskContext* node_;
- //     ros::Subscriber goal_sub_, cancel_sub_;
- //     ros::Publisher status_pub_, result_pub_, feedback_pub_;
+	    RTT::TaskContext* node_;
 
-	RTT::InputPort<ActionGoal> goal_sub_;
-	RTT::InputPort<actionlib_msgs::GoalID> cancel_sub_;
+	    RTT::InputPort<ActionGoal> goal_sub_;
+	    RTT::InputPort<actionlib_msgs::GoalID> cancel_sub_;
 
-	RTT::OutputPort<actionlib_msgs::GoalStatusArray> status_pub_;
-	RTT::OutputPort<ActionResult> result_pub_;
-	RTT::OutputPort<ActionFeedback> feedback_pub_;
+	    RTT::OutputPort<actionlib_msgs::GoalStatusArray> status_pub_;
+    	RTT::OutputPort<ActionResult> result_pub_;
+	    RTT::OutputPort<ActionFeedback> feedback_pub_;
 
       boost::recursive_mutex lock_;
 

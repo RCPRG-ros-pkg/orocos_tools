@@ -84,8 +84,8 @@ namespace actionlib {
    // cancel_sub_ = node_.subscribe<actionlib_msgs::GoalID>("cancel", 50,
     //    boost::bind(&ActionServer::cancelCallback, this, _1));
 
-	node_->ports()->addEventPort(goal_sub_);
-	node_->ports()->addEventPort(cancel_sub_);
+	node_->ports()->addEventPort(goal_sub_, boost::bind(&ActionServer::goalPortCB, this));
+	node_->ports()->addEventPort(cancel_sub_, boost::bind(&ActionServer::cancelPortCB, this));
 
     //read the frequency with which to publish status from the parameter server
 //    double status_frequency, status_list_timeout;
@@ -261,12 +261,13 @@ namespace actionlib {
     publishStatus();
   }
 
-  template <class ActionSpec>
-  void ActionServer<ActionSpec>::spinOnce(){
+template <class ActionSpec>
+  void ActionServer<ActionSpec>::spinOnce()
+{
     
-    if(started_)
+  if(started_)
 	{
-		ActionGoal ag;
+	/*	ActionGoal ag;
 		if(goal_sub_.read(ag) == RTT::NewData)
 		{
 			goalCallback(boost::shared_ptr<const ActionGoal>(new ActionGoal(ag)));
@@ -276,12 +277,32 @@ namespace actionlib {
 		if(cancel_sub_.read(id) == RTT::NewData)
 		{
 			cancelCallback(boost::shared_ptr<const actionlib_msgs::GoalID>(new actionlib_msgs::GoalID(id)));
-		}
+		}*/
 		{		    
 		boost::recursive_mutex::scoped_lock lock(lock_);
   		publishStatus();
 		}
-    }
+  }
+}
+
+template <class ActionSpec>
+ void ActionServer<ActionSpec>::goalPortCB()
+{
+  ActionGoal ag;
+  if(goal_sub_.read(ag) == RTT::NewData)
+  {
+    goalCallback(boost::shared_ptr<const ActionGoal>(new ActionGoal(ag)));
+  }
+}
+
+template <class ActionSpec>
+  void ActionServer<ActionSpec>::cancelPortCB()
+{
+  actionlib_msgs::GoalID id;
+  if(cancel_sub_.read(id) == RTT::NewData)
+  {
+    cancelCallback(boost::shared_ptr<const actionlib_msgs::GoalID>(new actionlib_msgs::GoalID(id)));
+  }
 }
 
 /*
