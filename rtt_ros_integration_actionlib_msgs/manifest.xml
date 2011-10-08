@@ -8,8 +8,8 @@
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/rtt_ros_integration_actionlib_msgs</url>
-  <depend package="rtt_ros_integration"/>
-  <depend package="rtt_ros_integration_std_msgs"/>
+  <depend package="rtt_rosnode"/>
+  <depend package="rtt_std_msgs"/>
   <depend package="actionlib_msgs"/>
 
   <export>
