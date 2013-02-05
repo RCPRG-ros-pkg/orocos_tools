@@ -42,6 +42,7 @@
 #include <rtt/Logger.hpp>
 #include <rtt/os/TimeService.hpp>
 
+#include <ros/ros.h>
 #include <boost/thread.hpp>
 #include <boost/shared_ptr.hpp>
 #include <actionlib_msgs/GoalID.h>
