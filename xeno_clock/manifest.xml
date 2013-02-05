@@ -1,0 +1,16 @@
+<package>
+  <description brief="xeno_clock">
+
+     xeno_clock
+
+  </description>
+  <author>Konrad Banachowicz</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/xeno_clock</url>
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-Wl,@/opt/xenomai/lib/posix.wrappers -L/opt/xenomai/lib -lpthread_rt -lxenomai -lpthread -lrt"/>
+  </export>
+</package>
+
+
