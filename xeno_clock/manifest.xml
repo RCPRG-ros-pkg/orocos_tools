@@ -9,7 +9,7 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/xeno_clock</url>
   <export>
-    <cpp cflags="-I${prefix}/include" lflags="-Wl,@/opt/xenomai/lib/posix.wrappers -L/opt/xenomai/lib -lpthread_rt -lxenomai -lpthread -lrt"/>
+    <cpp cflags="-I${prefix}/include" lflags="`if [ &quot; $OROCOS_TARGET&quot; = &quot;xenomai&quot; ]; then echo -Wl,@/opt/xenomai/lib/posix.wrappers -L/opt/xenomai/lib -lpthread_rt -lxenomai -lpthread -lrt; fi`"/>
   </export>
 </package>
 
