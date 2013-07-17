@@ -204,5 +204,5 @@ namespace actionlib {
 };
 
 //include the implementation
-#include <oro_action_server_imp.h>
+#include <oro_action_server/oro_action_server_imp.h>
 #endif
