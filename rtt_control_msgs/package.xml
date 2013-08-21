@@ -24,10 +24,10 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_depend>control_msgs</build_depend>
-  <build_depend>rtt_rostopic</build_depend>
+  <build_depend>rtt_roscomm</build_depend>
 
   <run_depend>control_msgs</run_depend>
-  <run_depend>rtt_rostopic</run_depend>
+  <run_depend>rtt_roscomm</run_depend>
 
   <build_depend>rtt_std_msgs</build_depend>
   <run_depend>rtt_std_msgs</run_depend>  <build_depend>rtt_geometry_msgs</build_depend>
@@ -36,7 +36,7 @@
   <run_depend>rtt_actionlib_msgs</run_depend>
 
   <export>
-    <rtt_plugin_depend>rtt_rostopic</rtt_plugin_depend>
+    <rtt_plugin_depend>rtt_ros_comm</rtt_plugin_depend>
     <rtt_plugin_depend>rtt_std_msgs</rtt_plugin_depend>    <rtt_plugin_depend>rtt_geometry_msgs</rtt_plugin_depend>    <rtt_plugin_depend>rtt_trajectory_msgs</rtt_plugin_depend>    <rtt_plugin_depend>rtt_actionlib_msgs</rtt_plugin_depend>
   </export>
 
