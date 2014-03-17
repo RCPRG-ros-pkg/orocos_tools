@@ -1,6 +1,6 @@
 <package>
   <name>rtt_control_msgs</name>
-  <version>2.6.0</version>
+  <version>0.0.0</version>
   <description>
 
     Provides an rtt typekit for ROS control_msgs messages.
@@ -30,14 +30,24 @@
   <run_depend>rtt_roscomm</run_depend>
 
   <build_depend>rtt_std_msgs</build_depend>
-  <run_depend>rtt_std_msgs</run_depend>  <build_depend>rtt_geometry_msgs</build_depend>
-  <run_depend>rtt_geometry_msgs</run_depend>  <build_depend>rtt_trajectory_msgs</build_depend>
-  <run_depend>rtt_trajectory_msgs</run_depend>  <build_depend>rtt_actionlib_msgs</build_depend>
+  <run_depend>rtt_std_msgs</run_depend>
+  <build_depend>rtt_geometry_msgs</build_depend>
+  <run_depend>rtt_geometry_msgs</run_depend>
+  <build_depend>rtt_trajectory_msgs</build_depend>
+  <run_depend>rtt_trajectory_msgs</run_depend>
+  <build_depend>rtt_actionlib_msgs</build_depend>
   <run_depend>rtt_actionlib_msgs</run_depend>
 
+
   <export>
-    <rtt_plugin_depend>rtt_ros_comm</rtt_plugin_depend>
-    <rtt_plugin_depend>rtt_std_msgs</rtt_plugin_depend>    <rtt_plugin_depend>rtt_geometry_msgs</rtt_plugin_depend>    <rtt_plugin_depend>rtt_trajectory_msgs</rtt_plugin_depend>    <rtt_plugin_depend>rtt_actionlib_msgs</rtt_plugin_depend>
+    <rtt_ros>
+      <plugin_depend>rtt_roscomm</plugin_depend>
+      <plugin_depend>rtt_std_msgs</plugin_depend>
+      <plugin_depend>rtt_geometry_msgs</plugin_depend>
+      <plugin_depend>rtt_trajectory_msgs</plugin_depend>
+      <plugin_depend>rtt_actionlib_msgs</plugin_depend>
+
+    </rtt_ros>
   </export>
 
 </package>
